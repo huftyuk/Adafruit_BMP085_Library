@@ -124,7 +124,8 @@ int32_t Adafruit_BMP085::readPressure(void) {
 
   p = p + ((X1 + X2 + (int32_t)3791)>>4);
 
-  return p;
+  //return p;
+  return UP;
 }
 
 
