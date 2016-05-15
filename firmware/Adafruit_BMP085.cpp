@@ -27,7 +27,8 @@ boolean Adafruit_BMP085::begin(uint8_t mode) {
     mode = BMP085_ULTRAHIGHRES;
   oversampling = mode;
 
-  Wire.begin();
+	if(! Wire.isEnabled())
+		Wire.begin();
 
   if (read8(0xD0) != 0x55) return false;
 
